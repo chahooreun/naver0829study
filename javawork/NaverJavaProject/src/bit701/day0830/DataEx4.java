@@ -5,13 +5,13 @@ public class DataEx4 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int a1=0xa3;//10진수로 얼마???? -
+		int a1=0xa3;//10진수로 얼마???? /10*16+3=163
 		System.out.println(a1);
 		
 		int a2=0xf4;
 		System.out.println(a2);
 		
-		int a3=0xa56;
+		int a3=0xa56;//
 		System.out.println(a3);
 	}
 
