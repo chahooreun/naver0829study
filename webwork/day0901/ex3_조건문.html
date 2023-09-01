@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*h3의 one 클래스에 글꼴,글자색 적용*/
+        h3.one{
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+            font-size: 30px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        let answer=prompt("숫자를 입력하세요");
+        document.write(`<h3 class=''answer=${answer}</h3>`);   
+            
+            let imgName="";
+            //1~15 일경우 해당 자동차 이미지를 나타내고 범위가 벗어날경우
+            //연예인사진중 하나를 나타내보자
+            if(answer>=1 && answer<=15){
+                imgTag=`<img alt="자동차" src="../mycar/mycar${answer}.png">`;
+            }else{
+                imgTag=`<img alt="김태희" src="../연예인사진/kimtaehee.jpg">`;
+
+            }
+            document.write(imgTag);
+    </script>
+</body>
+</html>

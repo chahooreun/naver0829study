@@ -35,10 +35,10 @@ public class Ex10_Exam {
             double discount = totalPrice * 0.1;
             double finalPrice = totalPrice - discount;
             System.out.println("할인된 최종 금액: " + finalPrice);
+            
         }
 
         scanner.close();
     }
 }
-
 
