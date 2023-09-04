@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6: ECMAScript 2015 introduced new features to JavaScript
+
+        let a = 10; // Use let for block-scoped variables
+        document.write(`<h3>a=${a}</h3>`);
+        if (true) {
+            let a2 = 20; // Create a new variable a2 instead of reusing a
+            document.write(`<h3>a2=${a2}</h3>`);
+        }
+        document.write(`<h3>a=${a}</h3><hr>`);
+
+        let b = 10;
+        document.write(`<h3>b=${b}</h3>`);
+        if (true) {
+            let b2 = 20;
+            document.write(`<h3>b2=${b2}</h3>`);
+        }
+        document.write(`<h3>b=${b}</h3><hr>`);
+
+        let s1 = "hello";
+        const MSG = "happy day";
+        document.write(`s1=${s1}, MSG=${MSG}</h3>`);
+        s1 = "안녕"; // Reassigning s1 is allowed
+        // MSG = "방가방가"; // Cannot reassign a constant
+        document.write(`s1=${s1}, MSG=${MSG}</h3>`);
+    </script>
+</body>
+</html>

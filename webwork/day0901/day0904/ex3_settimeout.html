@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            //alert("안녕하세요");
+
+            //사진요소값을 얻는다
+            let photo=document.getElementById("myphoto");
+            //사진의 src속성을 변경한다
+            //photo.setAttribute("src","./연예인사진/15.jpg);//
+
+            //3초후 설현 사진으로 변경하고시ㅍ을때
+            //3초후 딱 한번 funtion이 호출된다
+            setTimeout(function){
+                photo.setAttribute("src","../연예인사진/20.jpg");
+
+            },3000);
+        
+        }
+        //window.onload=function(){
+            //alert("안녕히가세요");
+        //}
+    </script>
+</head>
+<body>
+    <img src="../연예인사진/17.jpg" width="200" id="myphoto">
+    
+</body>
+</html>

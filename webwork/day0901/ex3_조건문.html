@@ -18,7 +18,12 @@
 <body>
     <script>
         let answer=prompt("숫자를 입력하세요");
-        document.write(`<h3 class=''answer=${answer}</h3>`);   
+        document.write(`<h3 class=''answer=${answer}</h3>`);
+            //이미지 너비 입력
+            let w=prompt("사진의 넓이를 입력하세요")
+            if(w==null){
+                w=300;
+            }
             
             let imgName="";
             //1~15 일경우 해당 자동차 이미지를 나타내고 범위가 벗어날경우
