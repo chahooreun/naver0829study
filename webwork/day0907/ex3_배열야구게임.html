@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+    <script>
+        let com,user;
+        window.onload=function(){
+            com=new Array(3);
+            user=new Array(3);
+
+            //새로운 난수 구라기 버튼 이벤트
+            document.getElementById("btnrandom").onclick=function(){
+                for(let i=0;i<3;i++)
+                {
+                    com[i]=parseInt(Math.random()*9)+1;//1~9사이 난수발생
+                    //중복처리
+                    for(let j=0;j<i;j++)
+                    {
+                        if(com[i]==com[j]){
+                            i--;
+                            break;
+                        }
+                    }
+                }
+            alert("새로운 난수가 발생되었습니다"+com);
+            }
+            //확인버튼이벤트
+            document.getElementById("btnok").onclick=function(){
+                alert("ok버튼 클릭!")
+            }
+
+            //숫자 입력후 엔터 이벤트
+            document.getElementById("txtsu").onkeyup=function(e){
+                if(e.keyCode==13)
+                {
+                    //숫자가 아닐경우 경고후 함수 종료
+                    //isNAN(Not a Number: 숫자가 아닐경우  true)
+                    if(isNaN(this.value)){
+                        alert("숫자로만 입력!");
+                        this.value="";
+                        this.focus();
+                        return;
+                    }
+                    document.getElementById("btnok").click();//버튼클릭효과
+                }
+            
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button type="button" id="btnrandom">새로운 난수발생</button>
+        <br><br>
+        <input type="text" id="txtsu" style="width: 100px;"
+        autofocus>
+
+        <button type="button" id="btnok">확인</button>
+    </div>
+    
+</body>
+</html>
