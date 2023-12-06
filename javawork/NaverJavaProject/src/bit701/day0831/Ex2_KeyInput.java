@@ -42,6 +42,8 @@ public class Ex2_KeyInput {
 			msg="미성년자";
 		}
 		System.out.println("당신은"+msg);
+	sc.close();
 	}
+	
 
 }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+body * {
+font-family: 'Jua';
+}
+
+.mytooltip{
+	position: absolute;
+	line-height: 1.5;
+	color: beige;
+	width: 200px;
+	background-color: #f09;
+	border: 2px solid wheat;
+	padding: 10px;
+	font-size: 25px;
+	border-radius: 30px;
+	opacity: 0.8;
+	display: none;
+}
+.view{
+	cursor: pointer;
+	text-decoration: underline;
+	background-color: #ccc;
+	
+}
+ol.today li{
+	cursor: pointer;
+	background-color: darkgoldenrod;
+	
+}
+ol.today li:hover{
+	background-color: rgba(0, 0, 0, 0.3);
+	
+}
+</style>
+<script>
+	$(function(){
+		$("a").blind({
+			mousemove:function(e){
+				$("div.mytooltip").css({
+					"left":e.pageX+"px",
+					"top":e.pageY+"px"
+				});
+			},
+			mouseover:function(){
+				$("div.mytooltip").fadeIn('fast');
+			},
+			mouseout:function(){
+				$("div.mytooltip").fadeOut('fast')
+			}
+		})
+	});
+	
+		$(".view").blind({
+			mousemove:function(e){
+				$("div.mytooltip").css({
+					"left":e.pageX+"px",
+					"top":e.pageY+"px"
+				});
+			},
+			mouseover:function(){
+				let color=$(this).attr("photo");
+				let text=$(this).text();
+				$("div.mytooltip").html("background-color",color).html(text);
+				$("div.mytooltip").fadeIn('fast')
+			},
+			mouseout:function(){
+				$("div.mytooltip").fadeOut('fast')
+			}
+		});
+	
+	
+</script>	
+</head>
+<body>
+	<h4 class="alert alert-danger">Tooltip 링크에 마우스를 올려보세요</h4>
+	<br><br>
+	<a style="font-size: 25px;cursor: pointer;">
+		Tooltip Tooltip Tooltip Tooltip
+	</a>
+	
+	<pre>
+		So are you happy now
+
+Finally happy now are you
+
+뭐 그대로야 난
+
+다 잃어버린 것 같아
+
+모든 게 맘대로 왔다가 인사도 없이 떠나
+
+이대로는 무엇도 사랑하고 싶지 않아
+
+다 해질 대로 해져버린
+
+기억 속을 여행해
+
+우리는 오렌지 태양 아래
+
+그림자 없이 함께 춤을 춰
+
+정해진 이별 따위는 없어
+
+아름다웠던 그 기억에서 만나
+
+Forever young
+
+우우우 우우우우 우우우 우우우우
+
+Forever we young
+
+우우우 우우우우
+
+이런 악몽이라면 영영 깨지 않을게
+
+섬 그래 여긴 섬 서로가 만든 작은 섬
+
+예 음 forever young 영원이란 말은 모래성
+
+작별은 마치 재난문자 같지
+
+그리움과 같이 맞이하는 아침
+
+서로가 이 영겁을 지나
+
+꼭 이 섬에서 다시 만나
+
+지나듯 날 위로하던 누구의 말대로 고작
+
+한 뼘짜리 추억을 잊는 게 참 쉽지 않아
+
+시간이 지나도 여전히
+
+날 붙드는 그곳에
+
+우리는 오렌지 태양 아래
+
+그림자 없이 함께 춤을 춰
+
+정해진 안녕 따위는 없어
+
+아름다웠던 그 기억에서 만나
+
+우리는 서로를 베고 누워
+
+슬프지 않은 이야기를 나눠
+
+우울한 결말 따위는 없어
+
+난 영원히 널 이 기억에서 만나
+
+Forever young
+
+우우우 우우우우 우우우 우우우우
+
+Forever we young
+
+우우우 우우우우
+
+이런 악몽이라면 영영 깨지 않을게
+	</pre>
+	<hr>
+	<h2>아이유</h2>
+	<ol type="1" class="today">
+		<li photo="../jquery/아이유1.jpg">아이유1</li>
+		<li photo="../jquery/아이유2.jpg">아이유2</li>
+		<li photo="../jquery/아이유3.jpg">아이유3</li>
+		<li photo="../jquery/아이유4.jpg">아이유4</li>
+	</ol>
+	<div class="mytooltip">
+		Java<br>
+		kkkk<br>
+		xxxx<br>
+		dddd<br>
+		eeee<br>
+	</div>
+</body>
+</html>

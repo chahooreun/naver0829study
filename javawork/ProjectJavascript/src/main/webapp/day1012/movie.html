@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영화 예매</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<!-- Add Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Add Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.movie {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+
+button {
+    background-color: #0074cc;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#booking-form, #confirmation {
+    margin: 20px;
+}
+
+</style>
+<script>
+	function reserveMovie(movieId) {
+    const movie = document.querySelector(`#movie-list .movie:nth-child(${movieId})`);
+    const movieTitle = movie.querySelector('h2').textContent;
+    const showtime = movie.querySelector('p').textContent;
+
+    document.querySelector('#movie-title').textContent = movieTitle;
+    document.querySelector('#showtime').textContent = showtime;
+
+    document.querySelector('#booking-form').style.display = 'block';
+}
+
+function confirmBooking() {
+    const name = document.querySelector('#name').value;
+    const seats = document.querySelector('#seats').value;
+
+    document.querySelector('#booked-name').textContent = name;
+    document.querySelector('#booked-seats').textContent = seats;
+
+    document.querySelector('#booking-form').style.display = 'none';
+    document.querySelector('#confirmation').style.display = 'block';
+}
+
+	
+</script>	
+</head>
+<body>
+	<h1>영화 예매</h1>
+    <div id="movie-list">
+        <div class="movie">
+            <h2>영화 제목 1</h2>
+            <p>상영 시간: 14:00</p>
+            <button onclick="reserveMovie(1)">예매</button>
+        </div>
+        <div class="movie">
+            <h2>영화 제목 2</h2>
+            <p>상영 시간: 16:30</p>
+            <button class="btn btn-primary" onclick="reserveMovie(1)">예매</button>
+        </div>
+        <!-- 다른 영화 정보들 -->
+    </div>
+    <div id="booking-form" style="display: none;">
+        <h2>예매 정보 입력</h2>
+        <input type="text" id="name" class="form-control" placeholder="이름">
+
+        <input type="text" id="name">
+        <input type="number" id="seats" class="form-control" placeholder="좌석 수">
+        <input type="number" id="seats" min="1">
+        <button onclick="confirmBooking()">예매 확인</button>
+    </div>
+    <div id="confirmation" style="display: none;">
+        <h2>예매 완료</h2>
+        <p>영화: <span id="movie-title"></span></p>
+        <p>상영 시간: <span id="showtime"></span></p>
+        <p>이름: <span id="booked-name"></span></p>
+        <p>좌석 수: <span id="booked-seats"></span></p>
+    </div>
+    <div class="container">
+    <!-- 웹 페이지 내용 -->
+</div>
+    <script src="script.js"></script>
+	
+</body>
+</html>

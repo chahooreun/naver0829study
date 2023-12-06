@@ -25,7 +25,7 @@ public class Ex1_KeyInput {
 		
 		//방법1 : 버퍼의 엔터문자를 먼저 읽어서 없엔다
 		//방법2 : 숫자를 읽을 경우도 무조건 nextLIne 으로 문자열로 입력후 변환해서 사용한다
-		
+		sc.close();
 
 	}
 
